@@ -2,6 +2,10 @@
 #include <cstdint>
 
 #include "includes.hpp"
+#include "printbitboard.hpp"
+#include "board.hpp"
+
+
 
 
 class Bitboard {

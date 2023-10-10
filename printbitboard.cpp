@@ -1,9 +1,11 @@
+#include "printbitboard.hpp"
+
+
 #include <iostream>
 #include <cstdint>
 
-//#include "printbitboard.hpp"
 
-void printBitboard(uint64_t bitboard) {
+void ::printBitboard(uint64_t bitboard) {
     for (int rank = 7; rank >= 0; --rank) {
         for (int file = 0; file < 8; ++file) {
             int square = rank * 8 + file;
