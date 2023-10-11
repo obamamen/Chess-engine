@@ -13,7 +13,26 @@ enum Square {
 };
 
 enum Piece {
-    EMPTY, PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING
+    WPAWN, WKNIGHT, WBISHOP, WROOK, WQUEEN, WKING, BPAWN, BKNIGHT, BBISHOP, BROOK, BQUEEN, BKING
 };
+
+///char pieceChar(int pieceIndex) {
+//    switch (pieceIndex) {
+//        case 0: return 'P'; // White pawn
+//       case 1: return 'N'; // White knight
+//        case 2: return 'B'; // White bishop
+//        case 3: return 'R'; // White rook
+//        case 4: return 'Q'; // White queen
+//        case 5: return 'K'; // White king
+//        case 6: return 'p'; // Black pawn
+//        case 7: return 'n'; // Black knight
+//       case 8: return 'b'; // Black bishop
+//        case 9: return 'r'; // Black rook
+//       case 10: return 'q'; // Black queen
+//        case 11: return 'k'; // Black king
+//       default: return '0';
+//    }
+//}
+
 
 #endif
