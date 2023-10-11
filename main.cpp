@@ -2,7 +2,7 @@
 #include <cstdint>
 
 #include "includes.hpp"
-#include "printbitboard.hpp"
+#include "printbitboard.h"
 #include "board.hpp"
 
 
@@ -22,6 +22,7 @@ public:
         pieces[piece] |= (1ULL << square);
     }
 };
+
 
 int main() {
     Bitboard board;

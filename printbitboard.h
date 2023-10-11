@@ -6,5 +6,4 @@
 
 void printBitboard(uint64_t bitboard);
 
-
 #endif
