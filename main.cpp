@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstdint>
 
-#include "includes.hpp"
+#include "enum.hpp"
 #include "printbitboard.h"
-#include "board.hpp"
+
 
 
 
