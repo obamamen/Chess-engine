@@ -24,8 +24,6 @@ int main() {
 
     Move m(A2,A4,WPAWN);
     
-    std::cout << m.target <<std::endl;
-
     board.MakeMove(m);
 
 
