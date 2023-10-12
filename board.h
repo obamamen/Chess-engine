@@ -5,6 +5,7 @@
 #include <cstdint>
 
 #include "enum.hpp"
+#include "move.h"
 
 class Bitboard {
 public:
@@ -14,6 +15,8 @@ public:
     
 
     void setPiece(Piece piece, Square square);
+
+    void MakeMove(Move move);
 
     void PrintBoard(uint64_t bitboards[12]);
     

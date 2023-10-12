@@ -4,18 +4,41 @@
 #include "enum.hpp"
 #include "printbitboard.h"
 #include "board.h"
+#include "move.h"
 
 
 int main() {
     Bitboard board;
-    board.setPiece(BPAWN, E2); // Set a white pawn on E2
-    board.setPiece(WKNIGHT, G1); // Set a white knight on G1
 
-    std::cout << "Bitboard for black pawns:" << std::endl;
-    printBitboard(board.pieces[BPAWN]);
+    board.setPiece(WPAWN, A2);
+    board.setPiece(WPAWN, B2);
+    board.setPiece(WPAWN, C2);
+    board.setPiece(WPAWN, D2);
+    board.setPiece(WPAWN, E2);
+    board.setPiece(WPAWN, F2);
+    board.setPiece(WPAWN, G2);
+    board.setPiece(WPAWN, H2);
 
-    std::cout << "Bitboard for white knights3:" << std::endl;
-    printBitboard(board.pieces[WKNIGHT]);
+    std::cout << "Bitboard for white pawns:" << std::endl;
+    printBitboard(board.pieces[WPAWN]);
+
+    Move m(A2,A4,WPAWN);
+    
+    std::cout << m.target <<std::endl;
+
+    board.MakeMove(m);
+
+
+    std::cout << "Bitboard for white pawns:" << std::endl;
+    printBitboard(board.pieces[WPAWN]);
+
+
+
+    //std::cout << "Bitboard for black pawns:" << std::endl;
+    //printBitboard(board.pieces[BPAWN]);
+
+    //std::cout << "Bitboard for white knights3:" << std::endl;
+    //printBitboard(board.pieces[WKNIGHT]);
 
     return 0;
 }

@@ -16,6 +16,7 @@ enum Piece {
     WPAWN, WKNIGHT, WBISHOP, WROOK, WQUEEN, WKING, BPAWN, BKNIGHT, BBISHOP, BROOK, BQUEEN, BKING
 };
 
+
 ///char pieceChar(int pieceIndex) {
 //    switch (pieceIndex) {
 //        case 0: return 'P'; // White pawn
