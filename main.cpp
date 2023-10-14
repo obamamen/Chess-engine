@@ -5,7 +5,7 @@
 #include "printbitboard.h"
 #include "board.h"
 #include "move.h"
-
+#include "bit.h"
 
 int main() {
     Bitboard board;
@@ -30,7 +30,15 @@ int main() {
     std::cout << "Bitboard for white pawns:" << std::endl;
     printBitboard(board.pieces[WPAWN]);
 
+    //int a = __builtin_ctzll(board.pieces[WPAWN]);
+    //std::cout << a << std::endl;
 
+    while (board.pieces[WPAWN])
+    {
+        int from = popLSB(board.pieces[WPAWN]);
+        std::cout << from << std::endl;
+    }
+    
 
     //std::cout << "Bitboard for black pawns:" << std::endl;
     //printBitboard(board.pieces[BPAWN]);
