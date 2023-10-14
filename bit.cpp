@@ -12,6 +12,7 @@
 
 uint64_t setBit(uint64_t num, int pos) {
     return num | (1ULL << pos);
+    
 };
 
 uint64_t clearBit(uint64_t num, int pos) {

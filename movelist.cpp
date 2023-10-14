@@ -8,11 +8,11 @@
 #include "enum.hpp"
 
 
-void moveList::addMove(int start, uint64_t ends, Piece p) {
+void moveList::addMoves(int start, uint64_t ends) {
     while (ends)
     {
         int end = popLSB(ends);
-        Move m(start, end, p);
+        Move m(start, end);
         moves.push_back(m);
     }
 }

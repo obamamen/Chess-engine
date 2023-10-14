@@ -1,50 +1,30 @@
 #include <iostream>
 #include <cstdint>
+#include <vector>
 
 #include "enum.hpp"
 #include "printbitboard.h"
 #include "board.h"
 #include "move.h"
 #include "bit.h"
+#include "movegenerator.h"
 
 int main() {
-    Bitboard board;
 
-    board.setPiece(WPAWN, A2);
-    board.setPiece(WPAWN, B2);
-    board.setPiece(WPAWN, C2);
-    board.setPiece(WPAWN, D2);
-    board.setPiece(WPAWN, E2);
-    board.setPiece(WPAWN, F2);
-    board.setPiece(WPAWN, G2);
-    board.setPiece(WPAWN, H2);
-
-    std::cout << "Bitboard for white pawns:" << std::endl;
-    printBitboard(board.pieces[WPAWN]);
-
-    Move m(A2,A4,WPAWN);
-    
-    board.MakeMove(m);
+    moveList knights = GenerateBakedKnightMoves();
+    uint64_t test = 0ULL;
+    for (int i = 0; i < knights.moves.size(); i++) {
+        test = 0ULL;
 
 
-    std::cout << "Bitboard for white pawns:" << std::endl;
-    printBitboard(board.pieces[WPAWN]);
+        uint64_t start = knights.moves[i].getStart();
+        uint64_t end = knights.moves[i].getTarget();
 
-    //int a = __builtin_ctzll(board.pieces[WPAWN]);
-    //std::cout << a << std::endl;
-
-    while (board.pieces[WPAWN])
-    {
-        int from = popLSB(board.pieces[WPAWN]);
-        std::cout << from << std::endl;
+        printBitboard(start | end);
+        std::cout << "Start space | : " << knights.moves[i].start <<std::endl;
+        std::cout << "End space | : " << knights.moves[i].target <<std::endl;
+        std::cout << "Iteration | : " << i <<std::endl;
     }
-    
-
-    //std::cout << "Bitboard for black pawns:" << std::endl;
-    //printBitboard(board.pieces[BPAWN]);
-
-    //std::cout << "Bitboard for white knights3:" << std::endl;
-    //printBitboard(board.pieces[WKNIGHT]);
 
     return 0;
 }

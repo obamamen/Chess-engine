@@ -4,10 +4,10 @@
 #include "move.h"
 #include "bit.h"
 
-Move::Move(int s, int t, int p) {
+Move::Move(int s, int t) {
     start = s;
     target = t;
-    piece = p;
+    //piece = p;
 }
 
 uint64_t Move::getStart() {

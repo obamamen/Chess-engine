@@ -19,7 +19,7 @@ class Move {
 
     int piece; // 0-11 for the pieces (WPAWN, BPAWN, WKNIGHT, BKNIGHT etc)
 
-    Move(int s, int t, int p); // constructor
+    Move(int s, int t); // constructor
 
     uint64_t getStart(); //start bitmap
 

@@ -12,7 +12,7 @@ class moveList {
     public:
         std::vector<Move> moves;
 
-        void addMove(int start, uint64_t ends, Piece p);
+        void addMoves(int start, uint64_t ends);
 
 };
 
