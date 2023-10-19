@@ -11,20 +11,32 @@
 
 int main() {
 
-    moveList knights = GenerateBakedKnightMoves();
-    uint64_t test = 0ULL;
-    for (int i = 0; i < knights.moves.size(); i++) {
-        test = 0ULL;
+    uint64_t knights[64];
+    GenerateBakedKnightMoves(knights);
 
+    for (int i = 0; i < 63; i++) {
 
-        uint64_t start = knights.moves[i].getStart();
-        uint64_t end = knights.moves[i].getTarget();
+        printBitboard(knights[i]);
+        std::cout << "|" << std::endl;
+        std::cout << "position: " << i << std::endl;
+        std::cout << "|" << std::endl;
 
-        printBitboard(start | end);
-        std::cout << "Start space | : " << knights.moves[i].start <<std::endl;
-        std::cout << "End space | : " << knights.moves[i].target <<std::endl;
-        std::cout << "Iteration | : " << i <<std::endl;
     }
+    std::cout << "|" << std::endl;
+    std::cout << "|" << std::endl;
+    
+    std::cout << "test :" << std::endl;
+    uint64_t bit = setBit(0ULL,H5);
+    uint64_t n = north(bit);
+    uint64_t s = south(bit);
+    uint64_t w = west(bit);
+    uint64_t e = east(bit);
+    uint64_t nw = north_west(bit);
+    uint64_t ne = north_east(bit);
+    uint64_t sw = south_west(bit);
+    uint64_t se = south_east(bit);
+
+    printBitboard(n|s|w|e|nw|ne|sw|se);
 
     return 0;
 }

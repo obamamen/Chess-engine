@@ -19,6 +19,15 @@
     uint64_t secondRankBitboard = 0x000000000000FF00ULL;
     uint64_t seventhRankBitboard = 0x00FF000000000000ULL;
 
+uint64_t north(uint64_t b) { return b << 8; }
+uint64_t south(uint64_t b) { return b >> 8; }
+uint64_t west(uint64_t b) { return (b & ~FILE_H) << 1; }
+uint64_t east(uint64_t b) { return (b & ~FILE_A) >> 1; }
+uint64_t north_west(uint64_t b) { return (b & ~FILE_H) << 9; }
+uint64_t north_east(uint64_t b) { return (b & ~FILE_A) << 7; }
+uint64_t south_west(uint64_t b) { return (b & ~FILE_H) >> 7; }
+uint64_t south_east(uint64_t b) { return (b & ~FILE_A) >> 9; }
+
 
 Board::Board() {
     for (int i = 0; i < 12; ++i) {

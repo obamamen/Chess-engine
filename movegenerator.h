@@ -10,7 +10,7 @@
 
 uint64_t GenerateKnightMoves(int pos);
 
-moveList GenerateBakedKnightMoves();
+void GenerateBakedKnightMoves(uint64_t *arr);
 
 
 #endif

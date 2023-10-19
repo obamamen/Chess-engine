@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cstdint>
+#include <array>
 
 #include "move.h"
 #include "movelist.h"
@@ -15,25 +16,20 @@ uint64_t GenerateKnightMoves(int pos) {
     knights = toggleBit(knights, pos);
 
     // add attacks
-attacks = (((knights << 6)  | (knights >> 10)) & ~FILE_GH) |
-          (((knights << 10) | (knights >> 6))  & ~FILE_AB) |
-         (((knights << 15) | (knights >> 17)) & ~FILE_H)  |
-         (((knights << 17) | (knights >> 15)) & ~FILE_A);
-
-//attacks = (knights << 6);
-
+    attacks = (((knights << 6)  | (knights >> 10)) & ~FILE_GH) |
+        (((knights << 10) | (knights >> 6))  & ~FILE_AB) |
+        (((knights << 15) | (knights >> 17)) & ~FILE_H)  |
+        (((knights << 17) | (knights >> 15)) & ~FILE_A);
 
     return attacks;
 }
 
-moveList GenerateBakedKnightMoves() {
-    moveList moves;
+void GenerateBakedKnightMoves(uint64_t *arr) {
+
     for (int i = 0; i < 64; i++)
     {   
-        
-        uint64_t m = GenerateKnightMoves(i);
-        //std::cout << m << std::endl;
-        moves.addMoves(i,m);
+        arr[i] = GenerateKnightMoves(i);
+
     }
-    return moves;
-}
+
+}   
