@@ -39,4 +39,6 @@ int main() {
     printBitboard(n|s|w|e|nw|ne|sw|se);
 
     return 0;
+
+    
 }
