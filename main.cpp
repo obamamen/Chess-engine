@@ -11,6 +11,7 @@
 
 int main() {
 
+    Board game;
     uint64_t knights[64];
     GenerateBakedKnightMoves(knights);
 
@@ -37,6 +38,10 @@ int main() {
     uint64_t se = south_east(bit);
 
     printBitboard(n|s|w|e|nw|ne|sw|se);
+    //game.setPiece(WPAWN,A2);
+    std::cout << "|" << std::endl;
+    game.whiteOO = 0;
+    game.PrintBoardAll();
 
     return 0;
 

@@ -16,21 +16,21 @@ public:
     Board();
 
 
-    bool whiteOO  =true;
-    bool whiteOOO =true;
+    int whiteOO;
+    int whiteOOO;
 
-    bool blackOO  =true;
-    bool blackOOO =true;
+    int blackOO;
+    int blackOOO;
 
     uint64_t enpassant;
 
-    int plyCount = 0;
+    int plyCount;
 
     //std::vector<uint64_t bitboards[12]> threeFoldRepetition;
 
 
     // Really important
-    bool isWhite = true;
+    bool isWhite;
 
     uint64_t pieces[12]; // One for each piece type
 
@@ -40,6 +40,8 @@ public:
     void MakeMove(Move move, int piece);
 
     void PrintBoard(uint64_t bitboards[12]);
+
+    void PrintBoardAll();
     
 };
 
